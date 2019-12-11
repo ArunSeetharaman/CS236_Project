@@ -1,3 +1,5 @@
+# Second version of BiGAN.
+
 from __future__ import print_function, division
 
 from keras.layers import Input, Dense, Reshape, Flatten, Dropout, multiply, GaussianNoise
