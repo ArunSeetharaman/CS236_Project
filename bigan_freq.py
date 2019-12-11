@@ -1,3 +1,5 @@
+# This is the moving average BiGAN for spatial frequency domain.
+
 from PIL import Image
 from math import floor
 import numpy as np
