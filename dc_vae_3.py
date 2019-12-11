@@ -1,3 +1,5 @@
+# Final version of VAE.
+
 from __future__ import print_function, division
 
 from keras.datasets import mnist
