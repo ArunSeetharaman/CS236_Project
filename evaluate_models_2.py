@@ -1,3 +1,5 @@
+# Evaluation for Poster.
+
 import h5py
 import numpy as np
 from matplotlib import pyplot as plt
@@ -39,7 +41,7 @@ if __name__ == '__main__':
     mse = []
     ssim = []
 
-    for i in tqdm(range(20)):
+    for i in tqdm(range(973)):
         imgs, _ = next(train_generator)
         imgs_true = imgs
         if under:
@@ -64,7 +66,7 @@ if __name__ == '__main__':
     mse = []
     ssim = []
 
-    for i in tqdm(range(20)):
+    for i in tqdm(range(100)):
         imgs, _ = next(train_generator)
         imgs_true = imgs
         if under:
@@ -97,7 +99,7 @@ if __name__ == '__main__':
     mse = []
     ssim = []
 
-    for i in tqdm(range(20)):
+    for i in tqdm(range(973)):
         imgs, _ = next(train_generator)
         imgs_true = imgs
         if under:
@@ -122,7 +124,7 @@ if __name__ == '__main__':
     mse = []
     ssim = []
 
-    for i in tqdm(range(20)):
+    for i in tqdm(range(100)):
         imgs, _ = next(train_generator)
         imgs_true = imgs
         if under:
@@ -154,7 +156,7 @@ if __name__ == '__main__':
     mse = []
     ssim = []
 
-    for i in tqdm(range(20)):
+    for i in tqdm(range(973)):
         imgs, _ = next(train_generator)[0]
         imgs_true = imgs
         if under:
@@ -184,7 +186,7 @@ if __name__ == '__main__':
     mse = []
     ssim = []
 
-    for i in tqdm(range(20)):
+    for i in tqdm(range(100)):
         imgs, _ = next(train_generator)[0]
         imgs_true = imgs
         if under:
