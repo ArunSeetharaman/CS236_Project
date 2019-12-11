@@ -1,3 +1,5 @@
+# First version of AAE.
+
 from __future__ import print_function, division
 
 from keras.datasets import mnist
