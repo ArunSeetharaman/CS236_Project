@@ -1,3 +1,5 @@
+# Third version of BiGAN.
+
 from __future__ import print_function, division
 
 from keras.layers import Conv2D, Dense, AveragePooling2D, Activation, Cropping2D, Dropout, BatchNormalization
