@@ -1,3 +1,5 @@
+# Evaluate for milestone
+
 import h5py
 import numpy as np
 from matplotlib import pyplot as plt
@@ -7,7 +9,7 @@ from keras_contrib.losses import DSSIMObjective
 from tqdm import tqdm
 
 from keras import backend as K
-'''
+
 from dc_bigan import BIGAN
 
 encoder = load_model('encoder_4.h5')
@@ -20,7 +22,7 @@ train_generator = bigan.generate_keras_input('train')
 mse = []
 ssim = []
 
-for i in tqdm(range(20)):
+for i in tqdm(range(973)):
     imgs, _ = next(train_generator)
     
     z = encoder.predict(imgs)
@@ -46,7 +48,7 @@ train_generator = bigan.generate_keras_input('val')
 mse = []
 ssim = []
 
-for i in tqdm(range(20)):
+for i in tqdm(range(100)):
     imgs, _ = next(train_generator)
     
     z = encoder.predict(imgs)
@@ -65,8 +67,7 @@ for i in tqdm(range(20)):
 
 print(np.mean(np.asarray(mse)))
 print(np.mean(np.asarray(ssim)))
-'''
-'''
+
 from dc_aae import AdversarialAutoencoder
 
 encoder = load_model('encoder_aae.h5')
@@ -79,7 +80,7 @@ train_generator = aae.generate_keras_input('train')
 mse = []
 ssim = []
 
-for i in tqdm(range(20)):
+for i in tqdm(range(973)):
     imgs, _ = next(train_generator)
     
     z = encoder.predict(imgs)
@@ -101,7 +102,7 @@ train_generator = aae.generate_keras_input('val')
 mse = []
 ssim = []
 
-for i in tqdm(range(20)):
+for i in tqdm(range(100)):
     imgs, _ = next(train_generator)
     
     z = encoder.predict(imgs)
@@ -117,7 +118,7 @@ for i in tqdm(range(20)):
 
 print(np.mean(np.asarray(mse)))
 print(np.mean(np.asarray(ssim)))
-'''
+
 from dc_vae import VariationalAutoencoder
 
 encoder = load_model('vae_huber_ssim/Models/encoder_vae_24.h5')
@@ -130,7 +131,7 @@ train_generator = vae.generate_keras_input('train')
 mse = []
 ssim = []
 
-for i in tqdm(range(20)):
+for i in tqdm(range(973)):
     imgs, _ = next(train_generator)
     
     imgs = imgs[0]
@@ -163,7 +164,7 @@ train_generator = vae.generate_keras_input('val')
 mse = []
 ssim = []
 
-for i in tqdm(range(20)):
+for i in tqdm(range(100)):
     imgs, _ = next(train_generator)
     
     imgs = imgs[0]
