@@ -1,3 +1,5 @@
+# Evaluation for Final Report.
+
 import h5py
 import numpy as np
 from matplotlib import pyplot as plt
@@ -19,7 +21,7 @@ train_generator = aae.generate_keras_input('train')#val')
 mse = []
 ssim = []
 
-for i in range(20):
+for i in range(973):
     imgs_true, under, _ = next(train_generator)
     z = encoder.predict(under)
     imgs_rec = generator.predict(z)
@@ -39,7 +41,7 @@ val_generator = aae.generate_keras_input('val')#val')
 mse = []
 ssim = []
 
-for i in range(20):
+for i in range(100):
     imgs_true, under, _ = next(val_generator)
     z = encoder.predict(under)
     imgs_rec = generator.predict(z)
@@ -67,7 +69,7 @@ train_generator = vae.generate_keras_input('train')#val')
 mse = []
 ssim = []
 
-for i in range(20):
+for i in range(973):
     under, imgs = next(train_generator)
     imgs_true = imgs[0]
     
@@ -95,7 +97,7 @@ val_generator = vae.generate_keras_input('val')#val')
 mse = []
 ssim = []
 
-for i in range(20):
+for i in range(100):
     under, imgs = next(val_generator)
     imgs_true = imgs[0]
     
@@ -130,7 +132,7 @@ train_generator = generate_keras_input('train')
 mse = []
 ssim = []
 
-for i in range(20):
+for i in range(973):
     imgs_true, under, _ = next(train_generator)
     
     z = bi.GAN.E.predict(under, batch_size = 16)
@@ -151,7 +153,7 @@ val_generator = generate_keras_input('val')
 mse = []
 ssim = []
 
-for i in range(20):
+for i in range(100):
     imgs_true, under, _ = next(val_generator)
     
     z = bi.GAN.E.predict(under, batch_size = 16)
@@ -172,7 +174,7 @@ train_generator = generate_keras_input('train')
 mse = []
 ssim = []
 
-for i in range(20):
+for i in range(973):
     imgs_true, under, _ = next(train_generator)
     
     z = bi.GAN.EE.predict(under, batch_size = 16)
@@ -193,7 +195,7 @@ val_generator = generate_keras_input('val')
 mse = []
 ssim = []
 
-for i in range(20):
+for i in range(100):
     imgs_true, under, _ = next(val_generator)
     
     z = bi.GAN.EE.predict(under, batch_size = 16)
@@ -209,8 +211,11 @@ for i in range(20):
 print(np.mean(np.asarray(mse)))
 print(np.mean(np.asarray(ssim)))
 
-for i in range(20):
-    imgs_true, under, _ = next(val_generator)
+test_generator = generate_keras_input('test')
+
+
+for i in range(99):
+    imgs_true, under, _ = next(test_generator)
     
     z = bi.GAN.EE.predict(under, batch_size = 16)
     imgs_rec = bi.GAN.GE.predict(z, batch_size = 16)
